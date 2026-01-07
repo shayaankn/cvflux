@@ -36,17 +36,25 @@ export default function Board() {
   }
 
   return (
-    <DndContext onDragEnd={handleDragEnd}>
-      <div className="flex gap-4 p-6 overflow-x-auto">
-        {Object.values(data.columns).map((column) => (
-          <Column
-            key={column.id}
-            column={column}
-            cards={column.cardIds.map((id) => data.cards[id])}
-            setData={setData}
-          />
-        ))}
-      </div>
-    </DndContext>
+    <section className="min-h-screen bg-gray-50 p-6">
+      <h1 className="text-2xl font-semibold text-gray-800 mb-2">
+        Job Application Tracker
+      </h1>
+      <p className="text-gray-700 mb-6">
+        All your job applications, organized in one place.
+      </p>
+      <DndContext onDragEnd={handleDragEnd}>
+        <div className="flex gap-4 overflow-x-auto">
+          {Object.values(data.columns).map((column) => (
+            <Column
+              key={column.id}
+              column={column}
+              cards={column.cardIds.map((id) => data.cards[id])}
+              setData={setData}
+            />
+          ))}
+        </div>
+      </DndContext>
+    </section>
   );
 }
