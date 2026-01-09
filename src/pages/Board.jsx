@@ -76,11 +76,11 @@ export default function Board() {
   }
 
   return (
-    <section className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-2xl font-semibold text-gray-800 mb-2">
+    <section className="min-h-screen bg-stone-100 p-6">
+      <h1 className="text-2xl font-semibold text-stone-800 mb-2">
         Job Application Tracker
       </h1>
-      <p className="text-gray-700 mb-6">
+      <p className="text-stone-700 mb-6">
         All your job applications, organized in one place.
       </p>
       <DndContext

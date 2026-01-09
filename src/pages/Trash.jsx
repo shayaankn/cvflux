@@ -22,8 +22,8 @@ export default function Trash({ visible = false }) {
           className={`w-12 h-12 flex items-center justify-center rounded-md border shadow
             ${
               isOver
-                ? "bg-red-50 text-red-600 border-red-300 scale-105"
-                : "bg-gray-50 text-gray-600 border-gray-300"
+                ? "bg-red-50 text-red-600 border-red-300 scale-110"
+                : "bg-stone-50 text-stone-600 border-stone-300"
             }
             transition-transform`}
         >
