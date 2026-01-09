@@ -1,6 +1,6 @@
 import { useDraggable } from "@dnd-kit/core";
 
-export default function Card({ card, columnId, setData }) {
+export default function Card({ card, columnId }) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: card.id,
     data: { columnId },
@@ -11,29 +11,6 @@ export default function Card({ card, columnId, setData }) {
       ? `translate(${transform.x}px, ${transform.y}px)`
       : undefined,
   };
-
-  function handleDelete(e) {
-    e.stopPropagation();
-
-    setData((prev) => {
-      const newCards = { ...prev.cards };
-      delete newCards[card.id];
-
-      return {
-        ...prev,
-        cards: newCards,
-        columns: {
-          ...prev.columns,
-          [columnId]: {
-            ...prev.columns[columnId],
-            cardIds: prev.columns[columnId].cardIds.filter(
-              (id) => id !== card.id
-            ),
-          },
-        },
-      };
-    });
-  }
 
   return (
     <div
@@ -66,14 +43,6 @@ export default function Card({ card, columnId, setData }) {
           {card.salaryRange}
         </p>
       </div>
-
-      {/* Delete button */}
-      <button
-        onClick={handleDelete}
-        className="cursor-pointer flex-shrink-0 text-red-500 hover:text-red-700 ml-2"
-      >
-        <i class="bi bi-x"></i>
-      </button>
     </div>
   );
 }
