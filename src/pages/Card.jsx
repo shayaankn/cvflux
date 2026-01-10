@@ -18,14 +18,14 @@ export default function Card({ card, columnId }) {
       {...listeners}
       {...attributes}
       style={style}
-      className="bg-stone-50 border border-stone-300 rounded-md p-3 mb-3 cursor-pointer"
+      className="bg-stone-50 border border-stone-300 rounded-md p-4 mb-3 cursor-pointer"
     >
-      <h3 className="font-semibold text-stone-800 mb-1">{card.position}</h3>
-      <p className="text-stone-600 text-sm mb-1">
+      <h3 className="font-semibold text-stone-800 mb-2">{card.position}</h3>
+      <p className="text-stone-600 text-sm mb-2">
         <i class="bi bi-building-fill text-xs mr-2"></i>
         {card.company}
       </p>
-      <p className="text-stone-600 text-sm mb-1">
+      <p className="text-stone-600 text-sm mb-2">
         <i class="bi bi-geo-alt-fill text-xs mr-2"></i>
         {card.location} • {card.workMode}
       </p>
