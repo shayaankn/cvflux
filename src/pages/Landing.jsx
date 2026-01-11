@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import heroImg from "../assets/hero.webp";
 import screenshotImg from "../assets/screenshot.webp";
 
 export default function Landing() {
   return (
     <main className="bg-stone-50 text-stone-800">
+      <Navbar />
+
       {/* HERO */}
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
@@ -129,6 +133,8 @@ export default function Landing() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }
