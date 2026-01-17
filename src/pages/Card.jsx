@@ -39,10 +39,8 @@ export default function Card({ card, columnId, setData }) {
   return (
     <div
       ref={setNodeRef}
-      {...listeners}
-      {...attributes}
       style={style}
-      className="relative bg-stone-50 border border-stone-300 rounded-md p-4 mb-3"
+      className="relative bg-stone-50 border border-stone-300 rounded-md pt-4 px-4 pb-8 mb-3"
     >
       <button
         onClick={handleDelete}
@@ -68,6 +66,18 @@ export default function Card({ card, columnId, setData }) {
         <i className="bi bi-bank2 text-xs mr-2"></i>
         {card.salaryRange}
       </p>
+
+      {/* Drag Handle */}
+      <div
+        {...listeners}
+        {...attributes}
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 text-stone-500 hover:text-stone-700 cursor-grab active:cursor-grabbing"
+        role="button"
+        aria-label="Drag handle"
+        title="Drag"
+      >
+        <i className="bi bi-grip-horizontal"></i>
+      </div>
     </div>
   );
 }
