@@ -104,7 +104,7 @@ export default function Card({ card, columnId, setData }) {
         <button
           onClick={handleMoveLeft}
           onPointerDown={(e) => e.stopPropagation()}
-          className="text-slate-600 hover:text-slate-900 cursor-pointer"
+          className="text-purple-400 hover:text-purple-600 cursor-pointer"
           aria-label="Move left"
           title="Move left"
         >
@@ -113,7 +113,7 @@ export default function Card({ card, columnId, setData }) {
         <button
           onClick={handleMoveRight}
           onPointerDown={(e) => e.stopPropagation()}
-          className="text-slate-600 hover:text-slate-900 cursor-pointer"
+          className="text-purple-400 hover:text-purple-600 cursor-pointer"
           aria-label="Move right"
           title="Move right"
         >
@@ -125,7 +125,7 @@ export default function Card({ card, columnId, setData }) {
       <div
         {...listeners}
         {...attributes}
-        className="hidden md:flex absolute bottom-1 left-1/2 -translate-x-1/2 text-slate-600 hover:text-slate-900 cursor-grab active:cursor-grabbing"
+        className="hidden md:flex absolute bottom-1 left-1/2 -translate-x-1/2 text-purple-400 hover:text-purple-600 cursor-grab active:cursor-grabbing"
         role="button"
         aria-label="Drag handle"
         title="Drag"
