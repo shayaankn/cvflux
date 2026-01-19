@@ -1,95 +1,97 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import heroImg from "../assets/hero.webp";
 import screenshotImg from "../assets/screenshot.webp";
 
 export default function Landing() {
   return (
-    <main className="bg-stone-50 text-stone-800">
-      <Navbar />
+    <main className="bg-white text-slate-900 w-full">
+      {/* <Navbar /> */}
 
-      {/* HERO */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div>
-            <h1 className="text-4xl font-bold tracking-tight">
-              Track your job applications <br className="hidden sm:block" />
-              without the chaos
-            </h1>
-            <p className="text-stone-600 max-w-xl text-lg mt-4">
-              A simple, focused job application tracker that helps you stay
-              organized, follow up on time, and keep your job search
-              stress-free.
-            </p>
+      {/* HERO SECTION */}
+      <section className="flex flex-col sm:items-center sm:text-center max-w-6xl mx-auto px-6 pt-18 pb-10">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          Track your job applications <br className="hidden sm:block" /> without
+          the chaos
+        </h1>
 
-            <div className="mt-6 flex gap-4">
-              <Link
-                to="/board"
-                className="bg-stone-950 hover:bg-stone-900 text-stone-50 rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-stone-200 px-6 py-3"
-              >
-                Get started
-              </Link>
-              <a
-                href="#features"
-                className="bg-stone-50 hover:bg-stone-100 text-stone-800 border border-stone-300 rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-stone-200 px-6 py-3"
-              >
-                Learn more
-              </a>
-            </div>
-          </div>
+        <p className="text-lg md:text-xl text-slate-600 max-w-2xl mb-8">
+          A simple, focused job application tracker that helps you stay
+          organized, follow up on time, and keep your job search stress-free.
+        </p>
 
-          {/* Hero image */}
-          <div className="relative">
-            <img
-              src={heroImg}
-              alt="Person using a laptop to organize job applications"
-              className="rounded-md border border-stone-200"
-            />
-          </div>
+        <div className="flex gap-4 mb-12">
+          <Link
+            to="/board"
+            className="text-slate-900 bg-purple-200 hover:bg-purple-300 border border-purple-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-200 cursor-pointer transition px-7 py-3"
+          >
+            Get Started
+          </Link>
+          <a
+            href="#features"
+            className="text-slate-500 hover:text-slate-900 bg-white hover:bg-purple-200 border border-slate-200 hover:border-purple-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-200 cursor-pointer px-7 py-3"
+          >
+            Learn more
+          </a>
         </div>
+
+        <img
+          src={screenshotImg}
+          alt="Product preview"
+          className="w-full max-w-6xl rounded-2xl border border-slate-200"
+        />
       </section>
 
-      {/* FEATURES */}
-      <section id="features" className="mx-auto max-w-6xl px-6 pb-24">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight">
-            Everything you need to stay on track
-          </h2>
-          <p className="text-stone-600 mt-3">
-            Simple features designed to support your job search.
-          </p>
-        </div>
+      {/* FEATURES SECTION */}
+      <section
+        id="features"
+        className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto px-6 py-14"
+      >
+        {/* Card 1 */}
+        <div className="border border-slate-200 rounded-2xl transition hover:-translate-y-2 hover:shadow-xl p-6">
+          {/* Content */}
+          <div className="flex flex-col">
+            <div className="text-purple-400 bg-purple-100 flex items-center justify-center h-14 w-14 rounded-xl text-2xl mb-4">
+              <i className="bi bi-grid-1x2-fill"></i>
+            </div>
 
-        <div className="grid gap-8 md:grid-cols-3 mt-12">
-          <div className="border border-stone-300 hover:bg-stone-950 hover:border-stone-950 rounded-md cursor-pointer transition-colors duration-200 group p-6">
-            <i className="bi bi-columns-gap text-3xl group-hover:text-stone-50"></i>
-            <h3 className="text-lg font-medium group-hover:text-stone-50 mt-2">
-              Application board
-            </h3>
-            <p className="text-sm text-stone-600 group-hover:text-stone-300 mt-2">
+            <h3 className="text-lg font-semibold mb-2">Application Board</h3>
+
+            <p className="text-sm text-slate-600 leading-relaxed">
               Visualize all your applications by status — applied, interviewing,
               offer, or rejected.
             </p>
           </div>
+        </div>
 
-          <div className="border border-stone-300 hover:bg-stone-950 hover:border-stone-950 rounded-md cursor-pointer transition-colors duration-200 group p-6">
-            <i className="bi bi-arrow-repeat text-3xl group-hover:text-stone-50"></i>
-            <h3 className="text-lg font-medium group-hover:text-stone-50 mt-2">
-              Update statuses
-            </h3>
-            <p className="text-sm text-stone-600 group-hover:text-stone-300 mt-2">
+        {/* Card 2 */}
+        <div className="border border-slate-200 rounded-2xl transition hover:-translate-y-2 hover:shadow-xl p-6">
+          {/* Content */}
+          <div className="flex flex-col">
+            <div className="text-purple-500 bg-purple-100 flex items-center justify-center h-14 w-14 rounded-xl text-2xl mb-4">
+              <i className="bi bi-clipboard-check-fill"></i>
+            </div>
+
+            <h3 className="text-lg font-semibold mb-2">Update statuses</h3>
+
+            <p className="text-sm text-slate-600 leading-relaxed">
               Mark applications as applied, interviewing, or offered — see your
               progress at a glance.
             </p>
           </div>
+        </div>
 
-          <div className="border border-stone-300 hover:bg-stone-950 hover:border-stone-950 rounded-md cursor-pointer transition-colors duration-200 group p-6">
-            <i className="bi bi-bar-chart-line text-3xl group-hover:text-stone-50"></i>
-            <h3 className="text-lg font-medium group-hover:text-stone-50 mt-2">
-              Simple overview
-            </h3>
-            <p className="text-sm text-stone-600 group-hover:text-stone-300 mt-2">
+        {/* Card 3 */}
+        <div className="border border-slate-200 rounded-2xl transition hover:-translate-y-2 hover:shadow-xl p-6">
+          {/* Content */}
+          <div className="flex flex-col">
+            <div className="text-purple-500 bg-purple-100 flex items-center justify-center h-14 w-14 rounded-xl text-2xl mb-4">
+              <i className="bi bi-bar-chart-fill"></i>
+            </div>
+
+            <h3 className="text-lg font-semibold mb-2">Simple overview</h3>
+
+            <p className="text-sm text-slate-600 leading-relaxed">
               See your entire job search progress at a glance with a clean,
               visual layout.
             </p>
@@ -97,44 +99,30 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* MORE DETAILS */}
-      <section className="mx-auto max-w-6xl px-6 pb-24">
-        <h2 className="text-3xl font-bold tracking-tight">
-          See your job search at a glance
-        </h2>
-        <p className="text-stone-600 mt-3">
-          The board view makes it easy to understand where you stand with every
-          application — no digging required.
-        </p>
-        <img
-          src={screenshotImg}
-          alt="App screenshot"
-          className="rounded-md border border-stone-200 mt-8"
-        />
-      </section>
-
       {/* CTA */}
-      <section className="bg-stone-950 text-stone-50">
-        <div className="mx-auto max-w-4xl px-6 py-24 text-center">
-          <h2 className="text-4xl font-bold tracking-tight">
-            Ready to organize your job search?
-          </h2>
-          <p className="mt-3 text-lg text-stone-100">
-            Try the demo and start tracking your applications in minutes.
-          </p>
+      <section className="bg-white px-1 pb-1 pt-10">
+        <div className="bg-purple-200 rounded-2xl">
+          <div className="mx-auto max-w-4xl px-6 py-20 sm:text-center">
+            <h2 className="text-4xl font-bold tracking-tight">
+              Ready to organize your job search?
+            </h2>
+            <p className="text-slate-600 text-lg mt-3">
+              Try the demo and start tracking your applications in minutes.
+            </p>
 
-          <div className="mt-6">
-            <Link
-              to="/board"
-              className="text-stone-50 hover:text-stone-800 hover:bg-stone-100 border border-stone-100 rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-stone-700 transition-colors duration-200 px-8 py-3"
-            >
-              Get Started
-            </Link>
+            <div className="mt-7">
+              <Link
+                to="/board"
+                className="text-slate-50 bg-slate-900 hover:bg-slate-800 rounded-2xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-400 transition-colors duration-200 px-7 py-3"
+              >
+                Get Started
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }
